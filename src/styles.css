@@ -58,9 +58,7 @@ body {
   padding: 10px;
 }
 
-/*
-
-// Datepicker
+/* DatePicker */
 .react-datetime-picker input:focus {
   outline: none;
 }
@@ -69,7 +67,7 @@ body {
   border: 0px solid gray !important;
 }
 
-// FABS
+/* FABS */
 .fab {
   border-radius: 100%;
   bottom: 25px;
@@ -85,4 +83,3 @@ body {
   position: fixed;
   left: 25px;
 }
-*/

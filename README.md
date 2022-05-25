@@ -6,9 +6,16 @@ React app, Front-end
 
 Follow me [Instagram](https://instagram.com/elisperezmusic).
 
-### `Web developer`
+## `Web developer`
 
 **Note: God is good!**
 
-#### Routes in my app
+## Activities:
+
+### Routes in my app
 - AppRouter.js
+
+### Big Calendar
+- Add calendar.
+- Add modal.
+- Form and DatePicker.
