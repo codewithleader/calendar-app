@@ -19,3 +19,4 @@ Follow me [Instagram](https://instagram.com/elisperezmusic).
 - Add calendar.
 - Add modal.
 - Form and DatePicker.
+- Add validations to the form.
