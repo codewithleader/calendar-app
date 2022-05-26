@@ -114,7 +114,6 @@ export const CalendarModal = () => {
             className='form-control'
           />
         </div>
-
         <hr />
         <div className='form-group'>
           <label>Title and notes</label>

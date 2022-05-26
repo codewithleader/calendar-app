@@ -20,3 +20,11 @@ Follow me [Instagram](https://instagram.com/elisperezmusic).
 - Add modal.
 - Form and DatePicker.
 - Add validations to the form.
+
+### Redux
+- Implementing the Redux pattern.
+  - Store.
+  - Reducers.
+  - Actions.
+  - Types.
+  - Provider in CalendarApp.js
