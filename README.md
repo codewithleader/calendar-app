@@ -28,3 +28,8 @@ Follow me [Instagram](https://instagram.com/elisperezmusic).
   - Actions.
   - Types.
   - Provider in CalendarApp.js
+
+### Actions
+- Create event.
+- Update event.
+- Delete event.
