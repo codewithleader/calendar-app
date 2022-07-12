@@ -9,8 +9,8 @@ export const AddNewFab = () => {
     dispatch(uiOpenModal());
   };
   return (
-    <button className='btn btn-primary fab' onClick={handleClick}>
-      <i className="fas fa-plus"></i>
-    </button>
+      <button className='btn btn-primary fab' onClick={handleClick}>
+        <i className="fas fa-plus"></i>
+      </button>
   );
 };

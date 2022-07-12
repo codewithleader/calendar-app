@@ -146,23 +146,23 @@ export const CalendarModal = () => {
         <div className='form-group'>
           <label>End date and time</label>
           <DateTimePicker
+            className='form-control'
+            minDate={dateStart}
             onChange={handleEndDateChange}
             value={dateEnd}
-            minDate={dateStart}
-            className='form-control'
           />
         </div>
         <hr />
         <div className='form-group'>
           <label>Title and notes</label>
           <input
-            type='text'
-            className={`form-control${!titleValid ? ' is-invalid' : ''}`}
-            placeholder="Event's Title"
-            name='title'
             autoComplete='off'
-            value={title}
+            className={`form-control${!titleValid ? ' is-invalid' : ''}`}
+            name='title'
             onChange={handleInputChange}
+            placeholder="Event's Title"
+            type='text'
+            value={title}
           />
           <small id='emailHelp' className='form-text text-muted'>
             A short description
@@ -171,23 +171,29 @@ export const CalendarModal = () => {
 
         <div className='form-group'>
           <textarea
-            type='text'
             className='form-control'
+            name='notes'
+            onChange={handleInputChange}
             placeholder='Notes'
             rows='5'
-            name='notes'
+            type='text'
             value={notes}
-            onChange={handleInputChange}
           ></textarea>
           <small id='emailHelp' className='form-text text-muted'>
             Additional information
           </small>
         </div>
 
-        <button type='submit' className='btn btn-outline-primary btn-block'>
-          <i className='far fa-save'></i>
-          <span> Save</span>
-        </button>
+        <div className="d-flex">
+          <button onClick={closeModal} type='button' className='btn btn-outline-danger flex-fill mr-1'>
+            <i className='far fa-window-close'></i>
+            <span> Cancel</span>
+          </button>
+          <button type='submit' className='btn btn-outline-primary flex-fill'>
+            <i className='far fa-save'></i>
+            <span> Save</span>
+          </button>
+        </div>
       </form>
     </Modal>
   );
