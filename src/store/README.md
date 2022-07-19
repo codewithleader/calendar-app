@@ -1,3 +1,6 @@
+# Thunk
+- Thunk is the middleware than allowed dispatching asynchronous actions
+```
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'; // Middleware for dispatching async actions
 
@@ -12,3 +15,4 @@ export const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
+```
