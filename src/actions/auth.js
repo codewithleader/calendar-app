@@ -62,8 +62,6 @@ export const startChecking = () => {
         })
       );
     } else {
-      // TODO: Delete the Swal.fire() line and add a redirect to the login page.
-      Swal.fire('Error', body.message, 'error');
       dispatch(checkingFinish());
     }
   };
@@ -71,8 +69,16 @@ export const startChecking = () => {
 
 const checkingFinish = () => ({ type: types.authCheckingFinish });
 
-// TODO: What is this?
-// const register = user => ({
-//   type: types.authStartRegister,
-//   payload: user,
-// });
+export const startLogout = () => {
+  return async dispatch => {
+    // Remove token from localStorage with localStorage.clear() OR  more specifically with localStorage.removeItem('propertyName') like this:
+    localStorage.clear();
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('token-init-date');
+    dispatch(logout());
+  };
+}
+
+const logout = () => ({
+  type: types.authLogout,
+})
