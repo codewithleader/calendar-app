@@ -50,6 +50,12 @@ export const startRegister = (name, email, password) => {
 
 export const startChecking = () => {
   return async dispatch => {
+    // check if the token exists before making requests to the server.
+    const token = localStorage.getItem('token');
+    if (!token) {
+      dispatch(checkingFinish());
+      return;
+    }
     const resp = await fetchWithToken('auth/renew');
     const body = await resp.json();
     if (body.ok) {
@@ -72,9 +78,8 @@ const checkingFinish = () => ({ type: types.authCheckingFinish });
 export const startLogout = () => {
   return async dispatch => {
     // Remove token from localStorage with localStorage.clear() OR  more specifically with localStorage.removeItem('propertyName') like this:
-    localStorage.clear();
-    // localStorage.removeItem('token');
-    // localStorage.removeItem('token-init-date');
+    localStorage.removeItem('token');
+    localStorage.removeItem('token-init-date');
     dispatch(logout());
   };
 }

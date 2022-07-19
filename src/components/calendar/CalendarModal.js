@@ -7,11 +7,7 @@ import DateTimePicker from 'react-datetime-picker';
 import Swal from 'sweetalert2';
 
 import { uiCloseModal } from '../../actions/ui';
-import {
-  eventAddNew,
-  eventClearActiveEvent,
-  eventUpdated,
-} from '../../actions/events';
+import { eventClearActiveEvent, eventUpdated, startAddNewEvent } from '../../actions/events';
 
 const customStyles = {
   content: {
@@ -92,11 +88,7 @@ export const CalendarModal = () => {
     const momentEnd = moment(end);
 
     if (momentStart.isSameOrAfter(momentEnd)) {
-      return Swal.fire(
-        'Error',
-        'The end date must be greater than the start date.',
-        'error'
-      );
+      return Swal.fire('Error', 'The end date must be greater than the start date.', 'error');
     }
 
     if (title.trim().length < 2) {
@@ -106,16 +98,7 @@ export const CalendarModal = () => {
     if (activeEvent) {
       dispatch(eventUpdated(formValues));
     } else {
-      dispatch(
-        eventAddNew({
-          ...formValues,
-          id: new Date().getTime(),
-          user: {
-            _id: 'ABC123',
-            name: 'Elis Antonio',
-          },
-        })
-      );
+      dispatch(startAddNewEvent(formValues));
     }
 
     setTitleValid(true);
@@ -184,8 +167,12 @@ export const CalendarModal = () => {
           </small>
         </div>
 
-        <div className="d-flex">
-          <button onClick={closeModal} type='button' className='btn btn-outline-danger flex-fill mr-1'>
+        <div className='d-flex'>
+          <button
+            onClick={closeModal}
+            type='button'
+            className='btn btn-outline-danger flex-fill mr-1'
+          >
             <i className='far fa-window-close'></i>
             <span> Cancel</span>
           </button>
