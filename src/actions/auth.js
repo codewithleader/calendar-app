@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2';
 import { fetchWithoutToken, fetchWithToken } from '../helpers/fetch';
 import { types } from '../types/types';
+import { eventLogout } from './events';
 
 export const startLogin = (email, password) => {
   // Thunk middleware: The "dispatch" argument is the function that is provided by Redux Thunk.
@@ -18,7 +19,7 @@ export const startLogin = (email, password) => {
         })
       );
     } else {
-      Swal.fire('Error', body.message, 'error');
+      Swal.fire('Error', body.msg, 'error');
     }
   };
 };
@@ -43,7 +44,7 @@ export const startRegister = (name, email, password) => {
         })
       );
     } else {
-      Swal.fire('Error', body.message, 'error');
+      Swal.fire('Error', body.msg, 'error');
     }
   };
 };
@@ -80,6 +81,7 @@ export const startLogout = () => {
     // Remove token from localStorage with localStorage.clear() OR  more specifically with localStorage.removeItem('propertyName') like this:
     localStorage.removeItem('token');
     localStorage.removeItem('token-init-date');
+    dispatch(eventLogout());
     dispatch(logout());
   };
 }
@@ -87,3 +89,4 @@ export const startLogout = () => {
 const logout = () => ({
   type: types.authLogout,
 })
+
