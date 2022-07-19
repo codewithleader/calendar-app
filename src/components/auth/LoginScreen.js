@@ -7,13 +7,13 @@ import './login.css';
 
 export const LoginScreen = () => {
   const [formLoginValues, handleLoginInputChange] = useForm({
-    lEmail: 'test1@test.com',
+    lEmail: 'elisperezmusic@perez.com',
     lPassword: '123456',
   });
 
   const [formRegisterValues, handleRegisterInputChange] = useForm({
-    rName: 'Test2',
-    rEmail: 'test2@test.com',
+    rName: 'Elis Antonio',
+    rEmail: 'elisperezmusic@perez.com',
     rPassword1: '123456',
     rPassword2: '123456',
   });
