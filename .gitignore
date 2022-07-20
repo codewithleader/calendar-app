@@ -82,7 +82,7 @@ web_modules/
 .env.test.local
 .env.production.local
 # .env.development
-.env.test
+# .env.test
 # .env.production
 .env.local
 
