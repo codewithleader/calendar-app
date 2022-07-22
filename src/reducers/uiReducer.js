@@ -1,7 +1,7 @@
 import { types } from '../types/types';
 
 const initialState = {
-  modalOpen: false,
+  isModalOpen: false,
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -9,12 +9,12 @@ export const uiReducer = (state = initialState, action) => {
     case types.uiOpenModal:
       return {
         ...state,
-        modalOpen: true,
+        isModalOpen: true,
       };
     case types.uiCloseModal:
       return {
         ...state,
-        modalOpen: false,
+        isModalOpen: false,
       };
 
     default:
