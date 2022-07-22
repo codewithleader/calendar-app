@@ -10,7 +10,7 @@ describe('UI Reducer Tests', () => {
     expect(state).toEqual(initialState);
   });
 
-  test('should handle UI_OPEN_MODAL', () => {
+  test('should handle UI_OPEN_MODAL and UI_CLOSE_MODAL', () => {
     const modalOpen = uiOpenModal();
     const state = uiReducer(initialState, modalOpen);
     // console.log(state);
