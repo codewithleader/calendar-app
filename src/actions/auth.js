@@ -51,12 +51,6 @@ export const startRegister = (name, email, password) => {
 
 export const startChecking = () => {
   return async dispatch => {
-    // check if the token exists before making requests to the server.
-    const token = localStorage.getItem('token');
-    if (!token) {
-      dispatch(checkingFinish());
-      return;
-    }
     const resp = await fetchWithToken('auth/renew');
     const body = await resp.json();
     if (body.ok) {
@@ -74,7 +68,7 @@ export const startChecking = () => {
   };
 };
 
-const checkingFinish = () => ({ type: types.authCheckingFinish });
+export const checkingFinish = () => ({ type: types.authCheckingFinish });
 
 export const startLogout = () => {
   return async dispatch => {

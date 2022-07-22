@@ -78,11 +78,6 @@ const eventUpdated = event => ({
 
 export const startEventDeleted = () => {
   return async (dispatch, getState) => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      dispatch(startLogout());
-      return;
-    }
     const { id } = getState().calendar.activeEvent;
     try {
       const resp = await fetchWithToken(`events/${id}`, {}, 'DELETE');
