@@ -114,6 +114,7 @@ export const CalendarModal = () => {
       closeTimeoutMS={200}
       className='modal'
       overlayClassName='modal-background'
+      ariaHideApp={!process.env.NODE_ENV === 'test'}
     >
       <h1>{activeEvent ? 'Editing Event' : 'New Event'}</h1>
       <hr />
