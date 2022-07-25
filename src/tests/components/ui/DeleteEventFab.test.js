@@ -9,9 +9,14 @@ import '@testing-library/jest-dom';
 
 import { DeleteEventFab } from '../../../components/ui/DeleteEventFab';
 import { startEventDeleted } from '../../../actions/events';
+import { startLogout } from '../../../actions/auth';
 
 jest.mock('../../../actions/events', () => ({
   startEventDeleted: jest.fn(),
+}));
+
+jest.mock('../../../actions/auth', () => ({
+  startLogout: jest.fn(),
 }));
 
 const middlewares = [thunk];
@@ -35,7 +40,12 @@ describe('Test in <DeleteEventFab />', () => {
   test('If token exist should call startEventDeleted when click', () => {
     localStorage.setItem('token', '123');
     wrapper.find('button').prop('onClick')();
-
     expect(startEventDeleted).toHaveBeenCalled();
-  })
+  });
+
+  test('If token not exist should call startLogout', () => {
+    localStorage.removeItem('token');
+    wrapper.find('button').prop('onClick')();
+    expect(startLogout).toHaveBeenCalled();
+  });
 });

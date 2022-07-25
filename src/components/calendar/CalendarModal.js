@@ -19,8 +19,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
-
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') {
+  Modal.setAppElement('#root');
+}
 
 const now = moment().minutes(0).seconds(0).add(1, 'hour');
 const nowPlus1 = now.clone().add(30, 'minutes');
@@ -33,7 +34,7 @@ const initEvent = {
 };
 
 export const CalendarModal = () => {
-  const { modalOpen } = useSelector(state => state.ui);
+  const { isModalOpen } = useSelector(state => state.ui);
   const { activeEvent } = useSelector(state => state.calendar);
   const dispatch = useDispatch();
 
@@ -107,7 +108,7 @@ export const CalendarModal = () => {
 
   return (
     <Modal
-      isOpen={modalOpen}
+      isOpen={isModalOpen}
       onRequestClose={closeModal}
       style={customStyles}
       closeTimeoutMS={200}
