@@ -116,7 +116,7 @@ describe('Testing in <CalendarModal />', () => {
       target: {
         name: 'title',
         value: 'Event title 1',
-      }
+      },
     });
 
     wrapper.find('form').simulate('submit', {
@@ -151,6 +151,10 @@ describe('Testing in <CalendarModal />', () => {
       preventDefault() {},
     });
 
-    expect(Swal.fire).toHaveBeenCalledWith("Error", "The end date must be greater than the start date.", "error");
+    expect(Swal.fire).toHaveBeenCalledWith(
+      'Error',
+      'The end date must be greater than the start date.',
+      'error'
+    );
   });
 });

@@ -9,6 +9,8 @@ import '@testing-library/jest-dom';
 import { LoginScreen } from '../../../components/auth/LoginScreen';
 import { startLogin, startRegister } from '../../../actions/auth';
 
+console.log(process.env);
+
 jest.mock('../../../actions/auth', () => ({
   startLogin: jest.fn(),
   startRegister: jest.fn(),
@@ -93,14 +95,14 @@ describe('Test in <LoginScreen />', () => {
       target: {
         name: 'rPassword1',
         value: '123456',
-      }
-    })
+      },
+    });
 
     wrapper.find('input[name="rPassword2"]').simulate('change', {
       target: {
         name: 'rPassword2',
         value: '123456',
-      }
+      },
     });
 
     wrapper.find('form').at(1).prop('onSubmit')({

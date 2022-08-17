@@ -35,3 +35,6 @@ Follow me [Instagram](https://instagram.com/elisperezmusic).
 - Delete event.
 
 #### Switch the branch master to main
+
+## http-server -o
+- Run build
