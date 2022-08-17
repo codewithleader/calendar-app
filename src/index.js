@@ -10,5 +10,3 @@ ReactDOM.render(
     <CalendarApp />,
     root
 );
-
-console.log(process.env);
