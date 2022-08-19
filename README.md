@@ -1,6 +1,7 @@
-# Calendar App: [https://calendar-backend-elis-antonio.herokuapp.com](https://calendar-backend-elis-antonio.herokuapp.com/)
+# Calendar App PWA Service Worker
+- SSL is required for the Service Worker to work, but in local development it is not required. (Ex: http://localhost:3000/)
 
-React app, Front-end
+### React app, Front-end
 
 ## Elis Antonio Perez
 
@@ -10,31 +11,3 @@ Follow me [Instagram](https://instagram.com/elisperezmusic).
 
 **Note: God is good!**
 
-## Activities:
-
-### Routes in my app
-- AppRouter.js
-
-### Big Calendar
-- Add calendar.
-- Add modal.
-- Form and DatePicker.
-- Add validations to the form.
-
-### Redux
-- Implementing the Redux pattern.
-  - Store.
-  - Reducers.
-  - Actions.
-  - Types.
-  - Provider in CalendarApp.js
-
-### Actions
-- Create event.
-- Update event.
-- Delete event.
-
-#### Switch the branch master to main
-
-## http-server -o
-- Run build
