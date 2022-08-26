@@ -8,3 +8,4 @@ import './styles.css';
 const root = document.getElementById('root');
 ReactDOM.render(<CalendarApp />, root);
 
+// console.log(process.env.NODE_ENV);
