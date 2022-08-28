@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "dayjs": "^1.11.3",
     "moment": "^2.26.0",
+    "react": "^17.0.2",
     "react-big-calendar": "^0.38.0",
     "react-datetime-picker": "^3.0.2",
     "react-dom": "^17.0.2",
@@ -19,9 +20,8 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react": "^17.0.2",
-    "redux-thunk": "^2.3.0",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "sweetalert2": "^11.1.9"
   },
   "scripts": {
