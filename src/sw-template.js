@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
+
 
 workbox.loadModule('workbox-background-sync');
 
@@ -8,9 +10,12 @@ const { registerRoute } = workbox.routing;
 const { CacheFirst, NetworkFirst, NetworkOnly } = workbox.strategies;
 const { BackgroundSyncPlugin } = workbox.backgroundSync;
 
-registerRoute(new RegExp('http://localhost:4000/api/auth/renew'), new CacheFirst());
+registerRoute(
+  new RegExp('http://localhost:4000/api/auth/renew'),
+  new NetworkFirst()
+);
 
-registerRoute(new RegExp('http://localhost:4000/api/events'), new CacheFirst());
+registerRoute(new RegExp('http://localhost:4000/api/events'), new NetworkFirst());
 
 registerRoute(
   new RegExp('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'),
